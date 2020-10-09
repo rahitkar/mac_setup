@@ -1,7 +1,7 @@
 echo "setting up the leptop"
 
 # brew packages
-brew install git vim node sqlite redis travis curl bat tree
+brew install git vim node travis curl bat tree
 # heroku cli
 brew tap heroku/brew && brew install heroku
 
