@@ -1,4 +1,4 @@
-echo "setting up the leptop"
+echo "setting up the laptop"
 
 # brew packages
 brew install node travis curl bat tree
