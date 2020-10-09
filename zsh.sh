@@ -18,5 +18,3 @@ alias repl="node-prototype-repl"
 alias run="runC.sh"
 alias python="python3"
 alias tree="tree -CI 'node_modules'"
-
-PATH=~/root/bin:/usr/local/Cellar/:$PATH

@@ -1,39 +1,21 @@
-echo "Setting up your MacBook"
+echo "setting up the leptop"
 
-echo "Creating directories"
-mkdir ~/temp ~/bin;
+# brew packages
+brew install git vim node sqlite redis travis curl bat tree
+# heroku cli
+brew tap heroku/brew && brew install heroku
 
-#setting up vim, zsh and aliases
-echo "Updating dot files and aliases"
-cp .vimrc .zshrc ~;
-cp zsh.sh ~/bin
+# installing zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#install homebrew
-echo "Installing package manger"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-echo "Setting up terminal"
-#install zsh and install some plugins
-brew install zsh zsh-autosuggestions
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/zsh-autosuggestions
+source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#install command line tools
-echo "Installing command line toold"
-brew install git vim node sqlite redis travis jq curl bat tree
-brew tap heroku/brew
-brew install heroku
-
-#install applications
-echo "Installing applications"
-brew cask install visual-studio-code
-
-# Applications need to be manually installed 
-# mindnode
-# zoom
-
-# make zsh default shell
-echo "Setting default shell"
-chsh -s /zsh;
-
-
-echo "\n\n----------------\n Done..."
+# installing powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
